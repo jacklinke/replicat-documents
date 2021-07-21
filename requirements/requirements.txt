@@ -1,0 +1,9 @@
+arrow>=1.0.0 # pyup: ignore
+django-cors-headers>=3.7.0,<3.8 # https://github.com/adamchainz/django-cors-headers
+django-model-utils>=4.1.1,<5.0  # https://github.com/jazzband/django-model-utils
+django>=2.2
+djangorestframework==3.12.4,<3.13  # https://github.com/encode/django-rest-framework
+mkdocs-material<=7.2
+Pillow>=8.2.0  # https://github.com/python-pillow/Pillow
+pydantic>=1.8.0 # pyup: ignore
+selenium>=3.141.0,<4.0
