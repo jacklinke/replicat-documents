@@ -38,8 +38,8 @@ if sys.argv[-1] == "tag":
     os.system("git push --tags")
     sys.exit()
 
-readme = open("README.rst").read()
-history = open("HISTORY.rst").read().replace(".. :changelog:", "")
+readme = open("README.md").read()
+history = open("HISTORY.md").read().replace(".. :changelog:", "")
 requirements = open("requirements/requirements.txt").readlines()
 
 setuptools.setup(
