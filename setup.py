@@ -40,7 +40,7 @@ if sys.argv[-1] == "tag":
 
 readme = open("README.md").read()
 history = open("HISTORY.md").read().replace(".. :changelog:", "")
-requirements = open("requirements/requirements.txt").readlines()
+requirements = open("./requirements/requirements.txt").readlines()
 
 setuptools.setup(
     author="Jack Linke",
