@@ -63,7 +63,6 @@ setuptools.setup(
     install_requires=requirements,
     license="MIT license",
     long_description=readme + "\n\n" + history,
-    include_package_data=True,
     keywords="replicat replicat-documents replicat_documents documents django pdf png jpg embed embedded",
     name="replicat-documents",
     packages=[
