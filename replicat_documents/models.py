@@ -93,6 +93,10 @@ class DocumentIssuerChoice(models.Model):
     def __str__(self):
         return f"{self.issuer_path}"
 
+    class Meta:
+        verbose_name = _("Document Issuer")
+        verbose_name_plural = _("Document Issuers")
+
 
 class ReplicatDocument(models.Model):
     """Document Model"""
@@ -108,15 +112,16 @@ class ReplicatDocument(models.Model):
     document_id = models.UUIDField(
         verbose_name=_("Document ID"),
         help_text=_("Generated document identifier"),
-        null=True,
         unique=True,
+        default=uuid.uuid4,
+        editable=False,
     )
 
     issuer = models.ForeignKey(
         DocumentIssuerChoice,
         verbose_name=_("Issuer"),
         on_delete=models.CASCADE,
-        help_text=_("The issuer of the document among allowed ones"),
+        help_text=_("The issuer of the document among the registered issuers"),
     )
 
     context = PydanticModelField(
@@ -136,7 +141,11 @@ class ReplicatDocument(models.Model):
     )
 
     # For each file format, these fields record when the file was last saved in that format.
-    rendered_to_pdf_at = models.DateTimeField(_("Rendered to PDF at"), null=True)
+    rendered_to_pdf_at = models.DateTimeField(
+        _("Rendered to PDF at"),
+        help_text=_("Date and time at which the document was last rendered as pdf"),
+        null=True,
+    )
 
     created_at = models.DateTimeField(
         _("Created on"),
@@ -151,6 +160,13 @@ class ReplicatDocument(models.Model):
         auto_now=True,
         editable=False,
     )
+
+    def __str__(self):
+        return f"{self.document_id}"
+
+    class Meta:
+        verbose_name = _("Replicat Document")
+        verbose_name_plural = _("Replicat Document")
 
     def expire_files(self):
         """Remove associated rendered files and reset dates to None"""
