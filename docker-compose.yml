@@ -17,7 +17,6 @@ services:
       - .:/app:z
     env_file:
       - ./.envs/.django
-      - ./.envs/.postgres
     ports:
       - "8000:8000"
     command: /start
@@ -31,5 +30,11 @@ services:
     volumes:
       - local_postgres_data:/var/lib/postgresql/data:Z
       - local_postgres_data_backups:/backups:z
-    env_file:
-      - ./.envs/.postgres
+    environment:
+      - ENGINE=django.db.backends.postgresql_psycopg2
+      - POSTGRES_PASSWORD=postgres
+      - NAME=postgres
+      - USER=postgres
+      - PASSWORD=postgres
+      - HOST=postgres
+      - PORT=5432

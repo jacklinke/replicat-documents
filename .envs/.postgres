@@ -1,7 +1,0 @@
-# PostgreSQL
-# ------------------------------------------------------------------------------
-POSTGRES_HOST=postgres
-POSTGRES_PORT=5432
-POSTGRES_DB=replicat_documents
-POSTGRES_USER=jFDXsdTfuhIJKlKuHTrdEsdTYuhjLK
-POSTGRES_PASSWORD=3JhtFRreSr4weFTygkhjMlk7KLjhbGFdxfHJNLKm1oifcdESdfTGJ
