@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.forms",
     "django_extensions",
-    "replicat_documents",
+    "replicat_documents.apps.ReplicatDocumentsConfig",
     "test_app",
 ]
 
